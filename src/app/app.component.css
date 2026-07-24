@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+.contenedor{
+    width: 550px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+h1{
+    text-align: center;
+    color: lime;
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+.campo{
+    margin-bottom: 18px;
+}
+
+label{
+    display: block;
+    margin-bottom: 6px;
+    color: green;
+    font-weight: bold;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=number]{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid blue;
+    border-radius: 8px;
+}
+
+input:focus{
+    outline: none;
+    border-color: green;
+}
+
+small{
+    color: red;
+    font-size: 13px;
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.terminos{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+button{
+    width: 100%;
+    padding: 12px;
+    background: blue;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover:not(:disabled){
+    background: green;
+    color: white;
+}
+
+button:disabled{
+    background: gray;
+    color: white;
+    cursor: not-allowed;
+}
+
+.resultado{
+    margin-top: 30px;
+    padding: 20px;
+    border: 3px solid blue;
+    border-radius: 10px;
+    background: white;
+}
+
+.resultado h2{
+    color: lime;
+    margin-bottom: 15px;
+}
+
+.resultado p{
+    margin: 8px 0;
+}
+
+input.ng-valid.ng-touched{
+    border: 2px solid green;
+}
+
+input.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+
+input[type=checkbox]{
+    accent-color: blue;
+}
