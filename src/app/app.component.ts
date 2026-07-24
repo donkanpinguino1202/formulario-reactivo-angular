@@ -20,10 +20,12 @@ interface UsuarioRegistrado {
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent {
   formulario: FormGroup;
   usuarioRegistrado: UsuarioRegistrado | null = null;
   constructor(private formularioBuilder: FormBuilder) {
+
     this.formulario = this.formularioBuilder.group({
       nombreCompleto: [
         '',
@@ -32,7 +34,6 @@ export class AppComponent {
           Validators.minLength(3)
         ]
       ],
-
       correoElectronico: [
         '',
         [
@@ -40,7 +41,6 @@ export class AppComponent {
           Validators.email
         ]
       ],
-
       nombreUsuario: [
         '',
         [
@@ -48,7 +48,6 @@ export class AppComponent {
           Validators.pattern('^[a-zA-Z0-9_]+$')
         ]
       ],
-
       contrasena: [
         '',
         [
@@ -56,7 +55,6 @@ export class AppComponent {
           Validators.minLength(8)
         ]
       ],
-
       confirmarContrasena: [
         '',
         Validators.required
@@ -70,18 +68,15 @@ export class AppComponent {
           Validators.max(90)
         ]
       ],
-
       terminos: [
         false,
         Validators.requiredTrue
       ]
-
     },
     {
       validators: validadorContrasenas
     });
   }
-
   get controles() {
     return this.formulario.controls;
   }
@@ -91,14 +86,16 @@ export class AppComponent {
       this.formulario.markAllAsTouched();
       return;
     }
-
     this.usuarioRegistrado = {
       nombreCompleto: this.formulario.value.nombreCompleto,
       correoElectronico: this.formulario.value.correoElectronico,
       nombreUsuario: this.formulario.value.nombreUsuario,
       edad: this.formulario.value.edad
     };
-    console.log(this.usuarioRegistrado
-    );
+    console.log(this.usuarioRegistrado);
+    this.formulario.reset();
+    this.formulario.patchValue({
+      terminos: false
+    });
   }
 }
